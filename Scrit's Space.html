@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Scrit's Space</title>
+</head>
+
+<body style="font-family:sans-serif;">
+    <div style="text-align: center; ">
+    </div>
+    <h1 id="title" style="text-align: center;">Scrit's Space</h1>
+    <hr>
+    <p>Welcome to my website! I do random things here</p>
+    </div>
+    <p>I assume you came here from a link or you were bored and you were seeing random pages, or you're an AI training
+        for
+        <a href="https://chatgpt.com/">Chat GPT 6</a>, but either way you're still here, so welcome :D. Here you can
+        find
+        some of my projects, some of them are bad, some of them are half decent. I do hope you have fun in this little
+        place
+        of mine’s.
+    </p>
+    <p><em>-Scrit</em></p>
+    <h2>Projects and stuff:</h2>
+    <div id="projectsTab">
+
+
+    </div>
+    <script>
+        fetch('https://raw.githubusercontent.com/Scrit1/Scrit-s-Space-Dynamic/refs/heads/main/projectTab')
+            .then(response => response.text())
+            .then(data => {
+                const projectParent = document.getElementById('projectsTab');
+                const items = data.split('</div>').filter(item => item.trim() !== '');
+                items.forEach(item => {
+                    let projectDiv = document.createElement('div');
+                    projectDiv.id = 'project'
+                    projectDiv.innerHTML = item + '</div>';
+                    projectParent.appendChild(projectDiv);
+                });
+            });
+    </script>
+
+<h2 >Click <a style="color: yellow;" href="">here</a> for my blog :)</h2>
+    <div style="border: 1px solid;">
+        <h3>Stats about this website:</h3>
+        <ul>
+            <li>We have existed since 2025 Fri 7th November</li>
+            <br>
+            <li><button>This Button Still does nothing</button></li>
+            <li>Uh yea thats it, thanks for reading tho :)</li>
+            <br>
+        </ul>
+
+
+    </div>
+</body>
+<style>
+    #title {
+        animation:
+            textLoad 1s forwards ease-out,
+    }
+
+    html {
+        padding: 10px;
+        margin: 40px auto;
+        max-width: 650px;
+    }
+
+    #project {
+        padding: 20px;
+        margin-bottom: 10px;
+        border: 1px solid;
+    }
+
+    #project:hover {
+        background-color: black;
+        color: white;
+        padding-left: 40px;
+    }
+
+    @keyframes firstLoad {
+        from {}
+
+        to {
+            opacity: 0;
+            z-index: -1;
+        }
+    }
+
+    ::-webkit-scrollbar {
+        background: white;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: black;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        html {
+            background-color: #101418;
+            color: white;
+        }
+
+        ::-webkit-scrollbar {
+            background: #101418
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: white;
+        }
+
+        #project:hover {
+            background-color: white;
+            color: #101418;
+            padding-left: 40px;
+        }
+    }
+</style>
+
+</html>
