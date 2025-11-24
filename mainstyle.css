@@ -1,0 +1,45 @@
+    html {
+        padding: 0 10px;
+        margin: 40px auto;
+        max-width: 650px;
+    }
+
+    a {
+        color: blue;
+    }
+
+    img {
+        border: 1px solid black;
+    }
+
+    ::-webkit-scrollbar {
+        background: white;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: black;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        html {
+            background-color: #101418;
+            color: white;
+        }
+
+        ::-webkit-scrollbar {
+            background: #101418
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: white;
+        }
+
+        a {
+            color: yellow
+        }
+
+        img {
+            border: 1px solid white;
+        }
+
+    }
